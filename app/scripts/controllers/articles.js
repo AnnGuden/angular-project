@@ -20,15 +20,15 @@ angular.module('testApp')
 
     var $ = window.$;
 
-    $scope.$on('openAddArticleForm', function (event, args, gameId) {
+    $scope.$on('openArticleForm', function (event, args, gameId) {
       $scope.openAddArticleForm(args, gameId);
     });
 
-    $scope.openAddArticleForm = function(){
+    $scope.openArticleForm = function(){
       switchFormVisibility();
     };
 
-    $scope.closeAddArticleForm = function(){
+    $scope.closeArticleForm = function(){
       switchFormVisibility();
     };
 

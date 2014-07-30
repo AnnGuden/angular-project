@@ -7,9 +7,9 @@
   <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div> -->
 
-<div ng-controller="ArticlesCtrl as ctrl">
-  <button ng-click="openAddArticleForm()" class="btn btn-default btn-lg">Add new post</button>
-  <div class="main-articles" ng-repeat="article in ctrl.articles | limitTo: 10">
+<div ng-controller="ArticlesCtrl as artctrl">
+  <button ng-click="openArticleForm()" class="btn btn-default btn-lg">Add new post</button>
+  <div class="main-articles" ng-repeat="article in artctrl.articles | limitTo: 10">
     <hr/>
     <div>
       <img ng-src="{{article.image}}" alt=""/>
@@ -28,21 +28,21 @@
   </div>
   <div class="add-article-overlay" ng-class="{'articleFormVisible' : articleFormVisible}">
     <div class="add-article-popup">
-      <p class="close" ng-click="closeAddArticleForm()">&times;</p>
+      <p class="close" ng-click="closeArticleForm()">&times;</p>
       <br>
-      <form name="articleForm"  ng-submit="articleForm.$valid && ctrl.addArticle()" novalidate>
+      <form name="articleForm"  ng-submit="articleForm.$valid && artctrl.addArticle()" novalidate>
         <h4 class="modal-title">Add new post</h4>
         <p>
-          <input type="text" class="form-control" placeholder="Enter your name" ng-model="ctrl.article.author" required>
+          <input type="text" class="form-control" placeholder="Your name" ng-model="artctrl.article.author" required>
         </p>
         <p>
-          <input type="text" class="form-control" placeholder="Enter title" ng-model="ctrl.article.title" required>
+          <input type="text" class="form-control" placeholder="Article title" ng-model="artctrl.article.title" required>
         </p>
         <p>
-          <textarea  class="form-control" placeholder="Enter text" rows="7" ng-model="ctrl.article.text" required> </textarea>
+          <textarea  class="form-control" placeholder="Add text to your article" rows="7" ng-model="artctrl.article.text" required> </textarea>
         </p>
         <p>
-          <input type="text" class="form-control" placeholder="Enter image link"  ng-model="ctrl.article.image">
+          <input type="text" class="form-control" placeholder="Enter image URL"  ng-model="artctrl.article.image">
         </p>
         <p class="row">
           <input type="submit" value="Submit" class="btn btn-primary btn-lg col-xs-12"/>
