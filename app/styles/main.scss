@@ -16,6 +16,10 @@ body {
   padding-bottom: 20px;
 }
 
+hr {
+  margin: 30px 0;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -39,6 +43,7 @@ body {
 
 /* Custom page footer */
 .footer {
+  margin-top: 30px;
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
@@ -68,6 +73,41 @@ body {
   }
 }
 
+.main-articles {
+  margin-top: 30px;
+}
+
+.add-article-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.add-article-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 550px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 40px 20px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    p {
+      margin: 20px 0;
+    }
+}
+
+.articleFormVisible {
+    display: block;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -90,3 +130,4 @@ body {
     border-bottom: 0;
   }
 }
+
