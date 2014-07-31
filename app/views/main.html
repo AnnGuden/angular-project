@@ -19,9 +19,10 @@
       <p ng-bind="article.text"></p>
     </div>
     <div class="text-muted" >
-      <span class="glyphicon glyphicon-time"></span>
-      <span ng-bind="article.date | date:'yyyy/MM/dd h:mm a' "></span>
-      &nbsp;&nbsp;&nbsp;
+      <span class="article-date">
+        <span class="glyphicon glyphicon-time"></span>
+        <span ng-bind="article.date | date:'yyyy/MM/dd h:mm a' "></span>
+      </span>
       <span class="glyphicon glyphicon-user"></span>
       <span ng-bind="article.author"></span>
     </div>
