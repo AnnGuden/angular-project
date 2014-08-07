@@ -1,45 +1,5 @@
 <div ng-controller="ArticlesCtrl as artctrl">
-  <button ng-click="articleFormVisible = !articleFormVisible" class="btn btn-default btn-lg">Add new post</button>
-  <div class="main-articles" ng-repeat="article in artctrl.articles | limitTo: 10">
-    <hr/>
-    <div>
-      <img ng-src="{{article.image}}" alt=""/>
-    </div>
-    <h3 class="text-muted" ng-bind="article.title"></h3>
-    <div>
-      <p ng-bind="article.text"></p>
-    </div>
-    <div class="text-muted" >
-      <span class="article-date">
-        <span class="glyphicon glyphicon-time"></span>
-        <span ng-bind="article.date | date:'yyyy/MM/dd h:mm a' "></span>
-      </span>
-      <span class="glyphicon glyphicon-user"></span>
-      <span ng-bind="article.author"></span>
-    </div>
-  </div>
-  <div class="add-article-overlay" ng-show="articleFormVisible">
-    <div class="add-article-popup">
-      <p class="close" ng-click="artctrl.toggleArticleForm()">&times;</p>
-      <br>
-      <form name="articleForm"  ng-submit="articleForm.$valid && artctrl.addArticle()" novalidate>
-        <h4 class="modal-title">Add new post</h4>
-        <p>
-          <input type="text" class="form-control" placeholder="Your name" ng-model="artctrl.article.author" required>
-        </p>
-        <p>
-          <input type="text" class="form-control" placeholder="Article title" ng-model="artctrl.article.title" required>
-        </p>
-        <p>
-          <textarea  class="form-control" placeholder="Add text to your article" rows="7" ng-model="artctrl.article.text" required> </textarea>
-        </p>
-        <p>
-          <input type="text" class="form-control" placeholder="Enter image URL"  ng-model="artctrl.article.image">
-        </p>
-        <p class="row">
-          <input type="submit" value="Submit" class="btn btn-primary btn-lg col-xs-12"/>
-        </p>
-      </form>
-    </div>
-  </div>
+    <button ng-click="articleFormVisible = !articleFormVisible" class="btn btn-default btn-lg">Add new post</button>
+    <blog-post></blog-post>
+    <article-popup></article-popup>
 </div>
