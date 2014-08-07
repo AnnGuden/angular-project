@@ -82,7 +82,7 @@ hr {
 }
 
 .add-article-overlay {
-  display: none;
+//  display: none;
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -106,10 +106,6 @@ hr {
     p {
       margin: 20px 0;
     }
-}
-
-.articleFormVisible {
-    display: block;
 }
 
 /* Responsive: Portrait tablets and up */

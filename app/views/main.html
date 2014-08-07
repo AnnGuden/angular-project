@@ -1,14 +1,5 @@
-<!-- <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div> -->
-
 <div ng-controller="ArticlesCtrl as artctrl">
-  <button ng-click="openArticleForm()" class="btn btn-default btn-lg">Add new post</button>
+  <button ng-click="articleFormVisible = !articleFormVisible" class="btn btn-default btn-lg">Add new post</button>
   <div class="main-articles" ng-repeat="article in artctrl.articles | limitTo: 10">
     <hr/>
     <div>
@@ -27,9 +18,9 @@
       <span ng-bind="article.author"></span>
     </div>
   </div>
-  <div class="add-article-overlay" ng-class="{'articleFormVisible' : articleFormVisible}">
+  <div class="add-article-overlay" ng-show="articleFormVisible">
     <div class="add-article-popup">
-      <p class="close" ng-click="closeArticleForm()">&times;</p>
+      <p class="close" ng-click="artctrl.toggleArticleForm()">&times;</p>
       <br>
       <form name="articleForm"  ng-submit="articleForm.$valid && artctrl.addArticle()" novalidate>
         <h4 class="modal-title">Add new post</h4>
