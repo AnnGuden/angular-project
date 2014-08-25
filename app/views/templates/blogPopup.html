@@ -1,0 +1,29 @@
+<div>
+    <button ng-click="toggleArticleForm()" class="btn btn-success btn-lg">Add new post</button>
+    <div class="add-article-overlay" ng-show="articleFormVisible">
+        <div class="add-article-popup">
+          <p class="close" ng-click="closeArticleForm()">&times;</p>
+          <br>
+          <form name="articleForm"  ng-submit="addArticle()" novalidate>
+            <h4 class="modal-title" ng-show="!editingArticle">Add new post</h4>
+            <h4 class="modal-title" ng-show="editingArticle">Edit post</h4>
+            <p>
+              <input type="text" class="form-control" placeholder="Your name" ng-model="newArticle.author" required>
+            </p>
+            <p>
+              <input type="text" class="form-control" placeholder="Article title" ng-model="newArticle.title" required>
+            </p>
+            <p>
+              <textarea  class="form-control" placeholder="Article's text" rows="5" ng-model="newArticle.body" required> </textarea>
+            </p>
+            <p>
+              <input type="text" class="form-control" placeholder="Image URL"  ng-model="newArticle.image">
+            </p>
+            <p class="row">
+              <input type="submit" value="Submit" class="btn btn-success btn-lg col-xs-7" ng-disabled="articleForm.$invalid"/>
+              <input name="reset" class="btn btn-default btn-lg col-xs-3 col-xs-offset-2" value="Reset" ng-click="resetArticleForm()" />
+            </p>
+          </form>
+        </div>
+    </div>
+</div>

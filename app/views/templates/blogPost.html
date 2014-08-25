@@ -1,11 +1,11 @@
-<div class="main-articles" ng-repeat="article in artctrl.articles | limitTo: 10">
+<div class="main-articles" ng-repeat="article in articles | limitTo: 10">
     <hr/>
-    <div>
-      <img ng-src="{{article.image}}" alt=""/>
-    </div>
     <h3 class="text-muted" ng-bind="article.title"></h3>
     <div>
-      <p ng-bind="article.text"></p>
+      <img class="img-responsive" ng-src="{{article.image}}" alt=""/>
+    </div>
+    <div>
+      <p ng-bind="article.body"></p>
     </div>
     <div class="text-muted" >
       <span class="article-date">
@@ -14,5 +14,9 @@
       </span>
       <span class="glyphicon glyphicon-user"></span>
       <span ng-bind="article.author"></span>
+      <span class="pull-right blog-buttons">
+        <span class="glyphicon glyphicon-pencil" ng-click="editArticle(article)"></span>
+        <span class="glyphicon glyphicon-remove" ng-click="deleteArticle(article)"></span>
+      </span>
     </div>
 </div>

@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('testApp')
-  .directive('articlePopup', function () {
+  .directive('blogPopup', function () {
       return {
           restrict: 'E',
           replace: true,
-          templateUrl: 'views/templates/articlePopup.html'
+          templateUrl: 'views/templates/blogPopup.html'
       };  
   });
